@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>@cosme・LIPS・Amazon 口コミ施策 | GOOD VIBES AGENCY</title>
+  <meta name="description" content="1,000名以上のリアルモニターで@cosme・LIPS・Amazonの口コミを量産。業界最安値・50名〜の一般人口コミ施策。GOOD VIBES AGENCY。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes float-a { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-20px) scale(1.05)} }
+    @keyframes float-b { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-14px) scale(0.97)} }
+    @keyframes float-c { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-24px) scale(1.02)} }
+    @keyframes fade-up { from{opacity:0;transform:translateY(32px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes shine { 0%{background-position:-200% center} 100%{background-position:200% center} }
+    @keyframes spin-slow { 0%{transform:rotate(0deg)} 100%{transform:rotate(360deg)} }
+    @keyframes pulse-ring { 0%{transform:scale(1);opacity:0.6} 100%{transform:scale(1.5);opacity:0} }
+
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.in { opacity:1; transform:translateY(0); }
+    .reveal-d1 { transition-delay:0.1s; }
+    .reveal-d2 { transition-delay:0.2s; }
+    .reveal-d3 { transition-delay:0.3s; }
+    .reveal-d4 { transition-delay:0.4s; }
+
+    :root {
+      --white:   #ffffff;
+      --bg:      #f7f8fa;
+      --black:   #0f0f0f;
+      --dark:    #1a1a1a;
+      --text:    #0f0f0f;
+      --sub:     #555555;
+      --light:   #888888;
+      --border:  #e5e7eb;
+      --card:    #ffffff;
+      --cosme:   #00ADA0;
+      --lips:    #E3808D;
+      --amazon:  #F59E00;
+      --shadow:  0 2px 12px rgba(0,0,0,0.08);
+      --shadow-md: 0 4px 24px rgba(0,0,0,0.10);
+      --cosme-dark: #008f84;
+      --lips-dark:  #c96070;
+      --amazon-dark: #d4850a;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 32px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900; font-size: 13px;
+      letter-spacing: 0.12em; color: var(--black);
+      text-decoration: none; text-transform: uppercase;
+    }
+    .nav-cta {
+      background: var(--black); color: var(--white);
+      padding: 10px 22px; border-radius: 6px;
+      font-weight: 700; font-size: 13px;
+      text-decoration: none; transition: all 0.2s;
+      white-space: nowrap;
+      position: relative; overflow: hidden;
+    }
+    .nav-cta:hover { background: #333; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 120px 24px 80px;
+      background: var(--white);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    /* 動くBlobたち */
+    .hero-blob { position:absolute; border-radius:50%; filter:blur(72px); pointer-events:none; }
+    .hero-blob-1 { width:500px;height:500px; top:-100px; left:-100px; background:rgba(0,173,160,0.10); animation:float-a 8s ease-in-out infinite; }
+    .hero-blob-2 { width:400px;height:400px; bottom:-80px; right:-80px; background:rgba(227,128,141,0.09); animation:float-b 10s ease-in-out infinite; }
+    .hero-blob-3 { width:350px;height:350px; top:30%; left:55%; background:rgba(245,158,0,0.07); animation:float-c 12s ease-in-out infinite; }
+    /* グリッドパターン */
+    .hero::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 48px 48px;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+      color: var(--sub);
+      font-size: 12px; font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 8px 20px; border-radius: 100px;
+      margin-bottom: 32px;
+    }
+    .hero-eyebrow .dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--cosme), var(--lips));
+      flex-shrink: 0;
+      position: relative;
+    }
+    .hero-eyebrow .dot::after {
+      content:''; position:absolute; inset:-3px; border-radius:50%;
+      background: inherit; opacity:0.4;
+      animation: pulse-ring 2s ease-out infinite;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 72px);
+      font-weight: 900; line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--black);
+      margin-bottom: 10px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--cosme) 0%, var(--lips) 60%, var(--amazon) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero h1 .line2 {
+      display: block;
+      font-size: clamp(20px, 3vw, 36px);
+      font-weight: 700; color: var(--sub);
+      letter-spacing: -0.01em;
+      margin-top: 12px;
+    }
+    .hero-sub {
+      font-size: clamp(15px, 1.8vw, 17px);
+      color: var(--sub);
+      max-width: 560px; margin: 24px auto 40px;
+      line-height: 1.9;
+    }
+    .hero-cta-group {
+      display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 64px;
+    }
+    .btn-primary {
+      background: var(--black); color: var(--white);
+      padding: 16px 36px; border-radius: 8px;
+      font-weight: 800; font-size: 15px;
+      text-decoration: none; transition: all 0.25s;
+      display: inline-block; position: relative; overflow: hidden;
+    }
+    .btn-primary::after {
+      content:''; position:absolute; top:0; left:-200%;
+      width:200%; height:100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      transition: left 0.4s ease;
+    }
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.2); }
+    .btn-primary:hover::after { left:200%; }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--border);
+      color: var(--text);
+      padding: 16px 36px; border-radius: 8px;
+      font-weight: 700; font-size: 15px;
+      text-decoration: none; transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--black); }
+
+    .hero-stats {
+      display: flex; gap: 0; justify-content: center;
+      border-radius: 20px; overflow: hidden;
+      max-width: 640px; margin: 0 auto;
+      background: var(--white);
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+      position: relative;
+    }
+    .hero-stats::before {
+      content:''; position:absolute; inset:-1px; border-radius:21px; z-index:-1;
+      background: linear-gradient(135deg, var(--cosme), var(--lips), var(--amazon));
+    }
+    .stat-item {
+      flex: 1; padding: 20px 16px; text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-size: 28px; font-weight: 900;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, var(--cosme), var(--lips));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+    .stat-label { font-size: 11px; color: var(--light); margin-top: 5px; }
+
+    /* ===== PLATFORM STRIP ===== */
+    .platforms {
+      padding: 28px 24px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--bg);
+    }
+    .platforms-inner {
+      max-width: 700px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      gap: 10px; flex-wrap: wrap;
+    }
+    .platform-label { font-size: 12px; color: var(--light); margin-right: 6px; font-weight: 600; }
+    .platform-badge {
+      display: flex; align-items: center; gap: 7px;
+      padding: 8px 18px; border-radius: 8px;
+      font-weight: 700; font-size: 14px;
+      border: 1.5px solid; background: var(--white);
+    }
+    .badge-cosme { border-color: var(--cosme); color: var(--cosme); }
+    .badge-lips { border-color: var(--lips); color: var(--lips); }
+    .badge-amazon { border-color: var(--amazon); color: var(--amazon); }
+    .platform-badge .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .badge-cosme .dot { background: var(--cosme); }
+    .badge-lips .dot { background: var(--lips); }
+    .badge-amazon .dot { background: var(--amazon); }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 80px 24px; }
+    .section-bg { background: var(--bg); }
+    /* skew区切り */
+    .section-skew {
+      position: relative;
+      background: var(--bg);
+    }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 10px; font-weight: 800;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--cosme); margin-bottom: 16px;
+      background: rgba(0,173,160,0.08);
+      border: 1.5px solid rgba(0,173,160,0.25);
+      padding: 5px 14px; border-radius: 100px;
+      font-family: 'Inter', sans-serif;
+    }
+    .section-title {
+      font-size: clamp(26px, 3.8vw, 44px);
+      font-weight: 900; line-height: 1.15;
+      color: var(--black); margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+    .section-title em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--cosme), var(--lips));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-desc {
+      font-size: 15px; color: var(--sub);
+      line-height: 1.85; max-width: 520px;
+    }
+    .container { max-width: 1040px; margin: 0 auto; }
+
+    /* ===== PROBLEM ===== */
+    .problem-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px; margin-top: 44px;
+    }
+    .problem-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+    .problem-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.10);
+      border-color: var(--cosme);
+    }
+    .problem-icon { font-size: 26px; margin-bottom: 14px; }
+    .problem-card h3 {
+      font-size: 15px; font-weight: 700;
+      color: var(--black); margin-bottom: 9px;
+    }
+    .problem-card p { font-size: 13px; color: var(--sub); line-height: 1.75; }
+    .x-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, #fff0f0, #ffe4e8);
+      color: #e03e3e;
+      font-size: 10px; font-weight: 800; padding: 3px 10px;
+      border-radius: 100px; margin-bottom: 12px;
+      letter-spacing: 0.08em;
+      border: 1px solid rgba(224,62,62,0.2);
+    }
+
+    /* ===== WHY DATA ===== */
+    .why-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px; margin-top: 44px;
+    }
+    .why-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px 24px; text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative; overflow: hidden;
+    }
+    .why-card:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(0,0,0,0.12); }
+
+    .why-num {
+      font-size: 44px; font-weight: 900; font-family: 'Inter', sans-serif;
+      line-height: 1; margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .why-card h3 { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+    .why-card p { font-size: 12px; color: var(--sub); line-height: 1.65; }
+
+    /* ===== SERVICE ===== */
+    .service-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px; margin-top: 44px;
+    }
+    .service-card {
+      border-radius: 20px; padding: 36px 32px;
+      border: none;
+      position: relative; overflow: hidden;
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+      cursor: default;
+      color: var(--white);
+    }
+    .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0,0,0,0.18); }
+    .service-card.cosme {
+      background: linear-gradient(145deg, #00ADA0 0%, #007d74 100%);
+      box-shadow: 0 8px 32px rgba(0,173,160,0.3);
+    }
+    .service-card.lips {
+      background: linear-gradient(145deg, #E3808D 0%, #c05060 100%);
+      box-shadow: 0 8px 32px rgba(227,128,141,0.3);
+    }
+    .service-card.amazon {
+      background: linear-gradient(145deg, #F59E00 0%, #c47d00 100%);
+      box-shadow: 0 8px 32px rgba(245,158,0,0.3);
+    }
+    /* 装飾の大きな丸 */
+    .service-card::after {
+      content: ''; position: absolute;
+      bottom: -40px; right: -40px;
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      pointer-events: none;
+    }
+
+    .service-platform-badge {
+      display: inline-block; font-size: 11px; font-weight: 800;
+      letter-spacing: 0.1em; padding: 5px 14px; border-radius: 100px;
+      margin-bottom: 18px; border: 1.5px solid rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.15); color: var(--white);
+    }
+    .badge-c {} .badge-l {} .badge-a {}
+
+    .service-card h3 {
+      font-size: 20px; font-weight: 800; margin-bottom: 10px;
+      color: var(--white);
+    }
+    .service-card .desc { font-size: 13px; color: rgba(255,255,255,0.75); line-height: 1.75; margin-bottom: 18px; }
+    .service-features { list-style: none; }
+    .service-features li {
+      font-size: 13px; color: rgba(255,255,255,0.85);
+      padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.15);
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+    .service-features li:last-child { border-bottom: none; }
+    .check-c { color: rgba(255,255,255,0.9); font-weight: 900; flex-shrink: 0; }
+    .check-l { color: rgba(255,255,255,0.9); font-weight: 900; flex-shrink: 0; }
+    .check-a { color: rgba(255,255,255,0.9); font-weight: 900; flex-shrink: 0; }
+
+    /* ===== STRENGTH ===== */
+    .strength-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px; margin-top: 44px;
+    }
+    .strength-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 28px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .strength-card:hover { transform:translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.10); }
+    .strength-icon { font-size: 30px; margin-bottom: 14px; }
+    .strength-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 9px; }
+    .strength-card p { font-size: 13px; color: var(--sub); line-height: 1.75; }
+    .vs-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #fffbeb, #fff8e6);
+      border: 1px solid #f0d070; color: #a06800;
+      font-size: 11px; font-weight: 800;
+      padding: 5px 12px; border-radius: 6px;
+      margin-top: 10px; line-height: 1.5;
+    }
+
+    /* ===== PRICING ===== */
+    .pricing-note {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: #f0faf9; border: 1px solid rgba(0,173,160,0.25);
+      border-radius: 10px; padding: 16px 20px;
+      font-size: 13px; color: var(--sub); margin-top: 18px;
+      max-width: 640px; line-height: 1.7;
+    }
+    .pricing-note-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+    .pricing-h3 {
+      font-size: 13px; font-weight: 800; margin: 48px 0 18px;
+      color: var(--sub); letter-spacing: 0.1em; text-transform: uppercase;
+      display: flex; align-items: center; gap: 12px;
+      font-family: 'Inter', sans-serif;
+    }
+    .pricing-h3::after {
+      content:''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    .pricing-table { width: 100%; border-collapse: collapse; }
+    .pricing-table th {
+      background: var(--black); border: 1px solid rgba(0,0,0,0.1);
+      padding: 12px 18px; font-size: 12px; font-weight: 700;
+      text-align: left; color: rgba(255,255,255,0.7); letter-spacing: 0.06em;
+    }
+    .pricing-table td {
+      border: 1px solid var(--border);
+      padding: 15px 18px; font-size: 14px; background: var(--white);
+    }
+    .pricing-table tr:hover td { background: #f0faf9; transition: background 0.2s; }
+    .price-cell {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900; font-size: 20px;
+      color: var(--black);
+    }
+    .popular-row td { background: #f0faf9 !important; }
+    .popular-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--cosme), #00C9BA);
+      color: white; font-size: 10px; font-weight: 800;
+      padding: 2px 8px; border-radius: 4px;
+      margin-left: 8px; letter-spacing: 0.05em;
+    }
+    .plan-sub { font-size: 11px; color: var(--light); margin-top: 3px; }
+    .per-price { font-size: 12px; color: var(--sub); margin-top: 3px; }
+
+    .pack-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px; margin-top: 18px;
+    }
+    .pack-card {
+      background: var(--white); border: 1.5px solid var(--border);
+      border-radius: 14px; padding: 28px;
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .pack-card:hover { transform:translateY(-4px); box-shadow:0 12px 36px rgba(0,0,0,0.11); }
+    .pack-card.featured {
+      border: 2px solid var(--cosme);
+      background: var(--white);
+      position: relative;
+      box-shadow: 0 8px 32px rgba(0,173,160,0.15);
+    }
+    .pack-card.featured .pack-price {
+      color: var(--cosme);
+    }
+    .pack-badge {
+      font-size: 11px; font-weight: 800; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 4px 12px; border-radius: 100px;
+      margin-bottom: 14px; display: inline-block; border: 1.5px solid;
+    }
+    .pack-badge.g { 
+      background: linear-gradient(135deg, rgba(0,173,160,0.12), rgba(227,128,141,0.08));
+      color: var(--cosme); border-color: var(--cosme);
+      background-size: 200% auto;
+      animation: shine 3s linear infinite;
+    }
+    .pack-badge.w { background: var(--bg); color: var(--sub); border-color: var(--border); }
+    .pack-name { font-size: 18px; font-weight: 800; margin-bottom: 6px; line-height: 1.3; }
+    .pack-price {
+      font-size: 32px; font-weight: 900; font-family: 'Inter', sans-serif;
+      color: var(--black); margin-bottom: 2px;
+    }
+    .pack-price-sub { font-size: 12px; color: var(--sub); margin-bottom: 16px; }
+    .pack-features { list-style: none; }
+    .pack-features li {
+      font-size: 13px; color: var(--text);
+      padding: 7px 0; border-bottom: 1px solid var(--border);
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+    .pack-features li:last-child { border-bottom: none; }
+    .check { color: var(--cosme); font-weight: 700; flex-shrink: 0; }
+
+    /* ===== FLOW ===== */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px; margin-top: 44px;
+      position: relative;
+    }
+    .flow-item {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px 14px; text-align: center;
+      position: relative; box-shadow: var(--shadow);
+      transition: transform 0.2s ease;
+    }
+    .flow-item:hover { transform: translateY(-3px); }
+    .flow-item:not(:last-child)::after {
+      content: '→'; position: absolute;
+      right: -12px; top: 50%; transform: translateY(-50%);
+      font-size: 14px; color: var(--cosme); z-index: 1;
+      background: var(--white); width: 16px; text-align: center;
+    }
+    .flow-step {
+      font-size: 10px; font-weight: 800; letter-spacing: 0.15em;
+      background: linear-gradient(135deg, var(--cosme), var(--lips));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+    .flow-item h3 { font-size: 13px; font-weight: 700; margin-bottom: 6px; }
+    .flow-item p { font-size: 11px; color: var(--sub); line-height: 1.6; }
+    .flow-tag {
+      display: inline-block; margin-top: 8px;
+      font-size: 10px; color: var(--light);
+      border: 1px solid var(--border); border-radius: 4px;
+      padding: 2px 8px; background: var(--bg);
+    }
+
+    /* ===== COMPLIANCE ===== */
+    .compliance-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+      margin-top: 44px;
+    }
+    .compliance-box {
+      border-radius: 12px; padding: 26px; border: 1.5px solid;
+    }
+    .compliance-box.ok { 
+      background: linear-gradient(135deg, rgba(0,173,160,0.04), #f9fdfc);
+      border-color: rgba(0,173,160,0.3);
+      border-left: 4px solid var(--cosme);
+    }
+    .compliance-box.ng { 
+      background: linear-gradient(135deg, rgba(224,62,62,0.04), #fff8f8);
+      border-color: rgba(224,62,62,0.25);
+      border-left: 4px solid #e03e3e;
+    }
+    .compliance-box h3 { font-size: 15px; font-weight: 800; margin-bottom: 14px; }
+    .compliance-box.ok h3 { color: var(--cosme); }
+    .compliance-box.ng h3 { color: #e03e3e; }
+    .compliance-list { list-style: none; }
+    .compliance-list li {
+      font-size: 13px; color: var(--text); padding: 7px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+    .compliance-list li:last-child { border-bottom: none; }
+    .ok-icon { color: var(--cosme); flex-shrink: 0; }
+    .ng-icon { color: #e03e3e; flex-shrink: 0; }
+
+    /* ===== FAQ ===== */
+    .faq-list { margin-top: 44px; max-width: 700px; }
+    .faq-item {
+      border: 1px solid var(--border); border-radius: 10px;
+      margin-bottom: 10px; overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .faq-q {
+      background: var(--white); padding: 18px 22px;
+      font-weight: 700; font-size: 14px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .faq-q::after { content: '＋'; font-size: 16px; color: var(--light); transition: transform 0.3s ease; }
+    .faq-q.open::after { transform: rotate(45deg); color: var(--cosme); }
+    .faq-a { padding: 0 22px 18px; font-size: 13px; color: var(--sub); line-height: 1.8; background: var(--white); }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      background: var(--black); color: var(--white);
+      text-align: center;
+    }
+    .cta-section .section-label { color: rgba(255,255,255,0.4); }
+    .cta-section h2 {
+      font-size: clamp(26px, 4vw, 44px);
+      font-weight: 900; margin-bottom: 14px;
+    }
+    .cta-section p { font-size: 15px; color: rgba(255,255,255,0.6); margin-bottom: 36px; }
+    .cta-badges {
+      display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .cta-badge {
+      display: flex; align-items: center; gap: 8px;
+      padding: 12px 20px; border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.15);
+      font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.8);
+    }
+    .contact-form {
+      max-width: 500px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .form-input {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--white); padding: 15px 18px; border-radius: 8px;
+      font-size: 14px; font-family: inherit;
+      transition: border-color 0.2s; outline: none;
+      width: 100%;
+    }
+    .form-input:focus { border-color: var(--cosme); }
+    .form-input::placeholder { color: rgba(255,255,255,0.3); }
+    .form-input option { background: #222; color: #fff; }
+    textarea.form-input { resize: vertical; min-height: 90px; }
+    .form-submit {
+      background: linear-gradient(135deg, var(--cosme), #00C9BA);
+      color: var(--white);
+      border: none; padding: 18px; border-radius: 8px;
+      font-size: 16px; font-weight: 800; cursor: pointer;
+      transition: all 0.25s; font-family: inherit; width: 100%;
+      position: relative; overflow: hidden;
+      letter-spacing: 0.02em;
+    }
+    .form-submit::after {
+      content:''; position:absolute; top:0; left:-200%;
+      width:200%; height:100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.4s ease;
+    }
+    .form-submit:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,173,160,0.35); }
+    .form-submit:hover::after { left:200%; }
+    .form-note { font-size: 12px; color: rgba(255,255,255,0.35); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 36px 24px; border-top: 1px solid var(--border);
+      background: var(--bg); text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Inter', sans-serif; font-weight: 900;
+      font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--black); margin-bottom: 14px;
+    }
+    .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+    .footer-links a { font-size: 12px; color: var(--sub); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--black); }
+    .footer-copy { font-size: 11px; color: var(--light); }
+
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav { padding: 12px 16px; }
+      .nav-logo { font-size: 11px; letter-spacing: 0.08em; }
+      .hero h1 { font-size: 30px; }
+      .hero-stats { flex-wrap: wrap; }
+      .stat-item { min-width: 120px; }
+      .compliance-grid { grid-template-columns: 1fr; }
+      .flow-grid { grid-template-columns: 1fr; }
+      .flow-item::after { display: none; }
+      .flow-item { border-bottom: 2px solid var(--border); }
+    }
+    @media (max-width: 900px) {
+      .flow-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">GOOD VIBES AGENCY</a>
+  <a href="#contact" class="nav-cta">無料で相談する →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-blob hero-blob-1"></div>
+  <div class="hero-blob hero-blob-2"></div>
+  <div class="hero-blob hero-blob-3"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span class="dot"></span> 一般モニター1,000名以上 × 業界最安値クラス・競合比1/3</div>
+    <h1>
+      <em>一般人の口コミ</em>が、<br>コスメを動かす。
+      <span class="line2">@cosme・LIPS・Amazonの口コミを、<br>リアルな声で確実に積み上げる。</span>
+    </h1>
+    <p class="hero-sub">
+      広告っぽいPR投稿より、一般人のリアルな口コミが購買を動かす。<br>
+      GVAの独自モニターコミュニティで、口コミ施策を業界最安値でスタート。
+    </p>
+    <div class="hero-cta-group">
+      <a href="#contact" class="btn-primary">無料で相談する →</a>
+      <a href="#pricing" class="btn-outline">料金を確認する</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">1,000+</div>
+        <div class="stat-label">モニター登録者数</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3媒体</div>
+        <div class="stat-label">対応プラットフォーム</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">50名〜</div>
+        <div class="stat-label">ミニマム人数</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">最安値<br>クラス</div>
+        <div class="stat-label">競合比1/3のコスパ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM STRIP -->
+<div class="platforms">
+  <div class="platforms-inner">
+    <span class="platform-label">対応プラットフォーム</span>
+    <div class="platform-badge badge-cosme"><span class="dot"></span>@cosme</div>
+    <div class="platform-badge badge-lips"><span class="dot"></span>LIPS</div>
+    <div class="platform-badge badge-amazon"><span class="dot"></span>Amazon</div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="section-bg section-skew">
+  <div class="container">
+    <div class="section-label">PROBLEM</div>
+    <h2 class="section-title">こんな悩みはありませんか？</h2>
+    <p class="section-desc">コスメ・美容商品において、口コミの数と質が購買率を左右する。でも効率的な増やし方がわからない。</p>
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="x-tag">課題 01</div>
+        <div class="problem-icon">📉</div>
+        <h3>@cosme・LIPSに口コミが少ない</h3>
+        <p>競合と並べられた瞬間、口コミ数で負ける。消費者は「口コミが多い＝信頼できる」で選んでいる。</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="x-tag">課題 02</div>
+        <div class="problem-icon">⭐</div>
+        <h3>Amazonの評価が★4を切っている</h3>
+        <p>★4.0を下回ると検索順位・CVRが大きく低下する。評価が積み上がっていても、低評価が混じることで競合に差をつけられ続ける。</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="x-tag">課題 03</div>
+        <div class="problem-icon">💸</div>
+        <h3>インフルエンサーPRはコストが高い</h3>
+        <p>フォロワーが多くても「広告投稿」と見抜かれた瞬間に効果が消える。費用対効果が読めない。</p>
+      </div>
+      <div class="problem-card reveal">
+        <div class="x-tag">課題 04</div>
+        <div class="problem-icon">⏱️</div>
+        <h3>モニター施策の自社運用が追いつかない</h3>
+        <p>商品手配・発送・投稿確認・精算まで、自社でやろうとすると工数が膨大になる。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHY DATA -->
+<section>
+  <div class="container">
+    <div class="section-label">DATA</div>
+    <h2 class="section-title">「一般人の口コミ」が、最も購買を動かす</h2>
+    <p class="section-desc">数字が証明する。本物の口コミが積み上がるほど、購買に直結する。</p>
+    <div class="why-grid">
+      <div class="why-card reveal" data-num="01">
+        <div class="why-num" style="color:var(--cosme)">92%</div>
+        <h3>口コミへの信頼度</h3>
+        <p>Nielsen調査。消費者が最も信頼する情報源は「知人・一般人の口コミ」。</p>
+      </div>
+      <div class="why-card reveal" data-num="02">
+        <div class="why-num" style="color:var(--lips)">×8</div>
+        <h3>エンゲージメント率</h3>
+        <p>一般モニターはメガインフルエンサーの最大8倍の反応率を生む。</p>
+      </div>
+      <div class="why-card reveal" data-num="03">
+        <div class="why-num" style="color:var(--amazon)">3.6x</div>
+        <h3>口コミ数の増加</h3>
+        <p>@cosme公式データ：発売前から口コミを蓄積すると発売後の3.6倍の口コミが集まる。</p>
+      </div>
+      <div class="why-card reveal" data-num="04">
+        <div class="why-num" style="color:var(--cosme)">1/5</div>
+        <h3>インフルエンサー比コスト</h3>
+        <p>大型インフルエンサーPRと比較して約1/5のコストで施策が実現できる。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section class="section-bg section-skew">
+  <div class="container">
+    <div class="section-label">SERVICE</div>
+    <h2 class="section-title">3プラットフォーム、全て対応</h2>
+    <p class="section-desc">各プラットフォームの特性に合わせた口コミ設計で、購買を動かす口コミを積み上げる。</p>
+    <div class="service-grid">
+
+      <div class="service-card cosme reveal">
+        <div class="service-platform-badge badge-c">@cosme</div>
+        <h3>@cosme 口コミ獲得</h3>
+        <p class="desc">日本最大のコスメ口コミサイト。リアルな体験談が蓄積されることで検索上位・ベストコスメ受賞への土台が生まれる。</p>
+        <ul class="service-features">
+          <li><span class="check-c">✓</span>一般モニターへの商品発送代行</li>
+          <li><span class="check-c">✓</span>「プレゼント品」明示の投稿フロー（規約準拠）</li>
+          <li><span class="check-c">✓</span>投稿URL・評価点の一覧納品</li>
+          <li><span class="check-c">✓</span>ステマ規制対応の投稿管理</li>
+        </ul>
+      </div>
+
+      <div class="service-card lips reveal reveal-d1">
+        <div class="service-platform-badge badge-l">LIPS</div>
+        <h3>LIPS 口コミ獲得</h3>
+        <p class="desc">累計1,200万DLの美容特化アプリ。10〜20代女性への圧倒的リーチ。購入前の最終判断に使われるため、口コミが直接購買に繋がる。</p>
+        <ul class="service-features">
+          <li><span class="check-l">✓</span>LIPS利用率の高いモニターを優先選定</li>
+          <li><span class="check-l">✓</span>10〜20代女性ターゲットに最適</li>
+          <li><span class="check-l">✓</span>投稿URL・評価点の一覧納品</li>
+          <li><span class="check-l">✓</span>関係性明示ガイドライン対応</li>
+        </ul>
+      </div>
+
+      <div class="service-card amazon reveal reveal-d2">
+        <div class="service-platform-badge badge-a">Amazon</div>
+        <h3>Amazon レビュー獲得</h3>
+        <p class="desc">星評価と件数が検索順位・購買率に直結。Amazonで実際に購入してもらい、正直なレビューを投稿してもらう。購入代金の精算もGVAが代行。</p>
+        <ul class="service-features">
+          <li><span class="check-a">✓</span>Amazonアカウント保有モニターへの依頼</li>
+          <li><span class="check-a">✓</span>実購入 → 自発的なレビュー投稿</li>
+          <li><span class="check-a">✓</span>購入代金の精算代行</li>
+          <li><span class="check-a">✓</span>レビューURL・評価点の一覧納品</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTH -->
+<section>
+  <div class="container">
+    <div class="section-label">WHY GVA</div>
+    <h2 class="section-title">GVAが選ばれる理由</h2>
+    <div class="strength-grid">
+      <div class="strength-card reveal">
+        <div class="strength-icon">👥</div>
+        <h3>即日使える1,000名以上のモニターコミュニティ</h3>
+        <p>UGC施策で構築済みのリアルモニターネットワークを活用。新規募集ゼロで即スタート可能。</p>
+      </div>
+      <div class="strength-card reveal">
+        <div class="strength-icon">💴</div>
+        <h3>業界最安値の管理手数料</h3>
+        <p>既存インフラを活用するため、競合他社比1/3〜1/2のコストで提供可能。</p>
+        <div class="vs-badge">競合：¥5,000〜¥15,000/名 → GVA：¥5,000/名（最安値クラス）</div>
+      </div>
+      <div class="strength-card reveal">
+        <div class="strength-icon">🛡️</div>
+        <h3>規約・ステマ規制に完全対応</h3>
+        <p>@cosme・LIPSの投稿ガイドラインと2023年施行ステマ規制に準拠したフローで安心。</p>
+      </div>
+      <div class="strength-card reveal">
+        <div class="strength-icon">📦</div>
+        <h3>商品手配〜投稿管理まで丸投げOK</h3>
+        <p>発送代行・モニター管理・投稿URL収集・精算まで全てGVAが代行。クライアントの負担は最小限。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section-bg" id="pricing">
+  <div class="container">
+    <div class="section-label">PRICING</div>
+    <h2 class="section-title">料金プラン</h2>
+    <p class="section-desc">管理手数料のみの完全透明な料金設計。競合比1/3のコストで提供。商品実費は別途ご負担いただきます。</p>
+    <div class="pricing-note">
+      <span class="pricing-note-icon">ℹ️</span>
+      <span>表示金額は<strong>管理手数料のみ</strong>です。商品現品・送料（@cosme・LIPS）または購入代金（Amazon）は別途クライアントのご負担となります。</span>
+    </div>
+
+    <!-- Single Plans -->
+    <p class="pricing-h3">— 単体プラン（1媒体）</p>
+    <div style="overflow-x:auto;">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>プラン</th>
+            <th>プラットフォーム</th>
+            <th>モニター人数</th>
+            <th>管理手数料</th>
+            <th>1名あたり</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              スターター
+              <div class="plan-sub">まず試したい方向け</div>
+            </td>
+            <td>@cosme / LIPS / Amazon<br><span style="font-size:11px;color:var(--light)">いずれか1つ選択</span></td>
+            <td style="font-weight:700;">50名</td>
+            <td class="price-cell">¥250,000</td>
+            <td><div class="per-price" style="font-size:13px;font-weight:700;">¥5,000<span style="font-size:11px;color:var(--sub)">/名</span></div></td>
+          </tr>
+          <tr class="popular-row">
+            <td>
+              スタンダード <span class="popular-badge">人気</span>
+              <div class="plan-sub">スケール割引あり</div>
+            </td>
+            <td>@cosme / LIPS / Amazon<br><span style="font-size:11px;color:var(--light)">いずれか1つ選択</span></td>
+            <td style="font-weight:700;">100名</td>
+            <td class="price-cell">¥450,000</td>
+            <td><div class="per-price" style="font-size:13px;font-weight:700;">¥4,500<span style="font-size:11px;color:var(--sub)">/名</span></div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Set Plans -->
+    <p class="pricing-h3">— お得なセットプラン（複数媒体）</p>
+    <div class="pack-grid">
+      <div class="pack-card reveal">
+        <div class="pack-badge w">コスメ特化</div>
+        <div class="pack-name">@cosme + LIPS<br>ダブルパック</div>
+        <div class="pack-price">¥460,000</div>
+        <div class="pack-price-sub">各50名（計100名）¥4,600/名 / 管理手数料のみ</div>
+        <ul class="pack-features">
+          <li><span class="check">✓</span>@cosme 50名 ＋ LIPS 50名</li>
+          <li><span class="check">✓</span>コスメ購買層への広範なリーチ</li>
+          <li><span class="check">✓</span>両媒体の投稿URL一覧納品</li>
+          <li><span class="check">✓</span>評価点集計付き</li>
+        </ul>
+      </div>
+      <div class="pack-card featured reveal reveal-d1">
+        <div class="pack-badge g">おすすめ</div>
+        <div class="pack-name">@cosme + LIPS<br>+ Amazon 全媒体パック</div>
+        <div class="pack-price">¥650,000</div>
+        <div class="pack-price-sub">各50名（計150名）¥4,333/名 / 管理手数料のみ</div>
+        <ul class="pack-features">
+          <li><span class="check">✓</span>@cosme・LIPS・Amazon 各50名</li>
+          <li><span class="check">✓</span>全プラットフォームを同時カバー</li>
+          <li><span class="check">✓</span>全媒体の投稿URL一覧納品</li>
+          <li><span class="check">✓</span>評価点集計付き</li>
+          <li><span class="check">✓</span>専任担当者アサイン</li>
+        </ul>
+      </div>
+      <div class="pack-card reveal">
+        <div class="pack-badge w">大量展開</div>
+        <div class="pack-name">@cosme + LIPS<br>+ Amazon 大量パック</div>
+        <div class="pack-price">¥1,200,000</div>
+        <div class="pack-price-sub">各100名（計300名）¥4,000/名 / 管理手数料のみ</div>
+        <ul class="pack-features">
+          <li><span class="check">✓</span>@cosme・LIPS・Amazon 各100名</li>
+          <li><span class="check">✓</span>口コミを一気に量産したい方向け</li>
+          <li><span class="check">✓</span>全媒体の投稿URL一覧納品</li>
+          <li><span class="check">✓</span>評価点集計付き</li>
+          <li><span class="check">✓</span>専任担当者アサイン</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section>
+  <div class="container">
+    <div class="section-label">WORKFLOW</div>
+    <h2 class="section-title">依頼から投稿まで、最短2週間</h2>
+    <p class="section-desc">GVAがワンストップ対応。クライアントは商品を用意するだけでOK。</p>
+    <div class="flow-grid">
+      <div class="flow-item">
+        <div class="flow-step">STEP 01</div>
+        <h3>無料ヒアリング</h3>
+        <p>商品・ターゲット・予算をオンラインで確認</p>
+        <span class="flow-tag">30分 / 無料</span>
+      </div>
+      <div class="flow-item">
+        <div class="flow-step">STEP 02</div>
+        <h3>モニター選定</h3>
+        <p>1,000名から最適なモニターをキャスティング</p>
+        <span class="flow-tag">3営業日以内</span>
+      </div>
+      <div class="flow-item">
+        <div class="flow-step">STEP 03</div>
+        <h3>商品発送</h3>
+        <p>クライアント→GVA→モニターへ転送</p>
+        <span class="flow-tag">発送代行込み</span>
+      </div>
+      <div class="flow-item">
+        <div class="flow-step">STEP 04</div>
+        <h3>投稿管理</h3>
+        <p>モニターの投稿をフォロー・確認</p>
+        <span class="flow-tag">常時対応</span>
+      </div>
+      <div class="flow-item">
+        <div class="flow-step">STEP 05</div>
+        <h3>URL納品</h3>
+        <p>投稿URL・評価点を一覧で納品</p>
+        <span class="flow-tag">投稿完了後</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section class="section-bg">
+  <div class="container">
+    <div class="section-label">COMPLIANCE</div>
+    <h2 class="section-title">規約・ステマ規制への対応</h2>
+    <p class="section-desc">各プラットフォームの規約とステマ規制に準拠した設計で、安心してご依頼いただけます。</p>
+    <div class="compliance-grid">
+      <div class="compliance-box ok">
+        <h3>✅ GVAが必ず守ること</h3>
+        <ul class="compliance-list">
+          <li><span class="ok-icon">✓</span>「もらった商品」として明示した投稿を徹底</li>
+          <li><span class="ok-icon">✓</span>投稿内容の強制・指定は一切しない</li>
+          <li><span class="ok-icon">✓</span>ネガティブな口コミも尊重（リアルな感想が価値）</li>
+          <li><span class="ok-icon">✓</span>2023年施行ステマ規制対応フロー完備</li>
+          <li><span class="ok-icon">✓</span>@cosme・LIPSの投稿ガイドライン遵守</li>
+        </ul>
+      </div>
+      <div class="compliance-box ng">
+        <h3>🚫 絶対にやらないこと</h3>
+        <ul class="compliance-list">
+          <li><span class="ng-icon">✗</span>「購入品」として偽って投稿させる</li>
+          <li><span class="ng-icon">✗</span>高評価・ポジティブ内容の強制</li>
+          <li><span class="ng-icon">✗</span>口コミ内容に対するインセンティブ付与</li>
+          <li><span class="ng-icon">✗</span>テンプレ文の使い回し（品質低下）</li>
+          <li><span class="ng-icon">✗</span>各プラットフォーム規約違反につながる行為</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2 class="section-title">よくある質問</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">最低何名から依頼できますか？</div>
+        <div class="faq-a">50名からご依頼いただけます。まずは1媒体・50名でお試しいただき、効果を確認してから媒体・人数を拡大される企業様が多いです。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">口コミの内容を指定できますか？</div>
+        <div class="faq-a">各プラットフォームの規約・ステマ規制上、内容の指定はできません。ただし商品の特徴をモニターに正しく伝えるブリーフィングは行います。自分の言葉で書かれたリアルな口コミの方が、ユーザーからの信頼度も購買影響力も高くなります。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Amazonのスキームは規約的に問題ありませんか？</div>
+        <div class="faq-a">GVAではモニターが実際に購入し、自発的にレビューを投稿する設計を採用しています。ご契約前にリスクと設計の詳細についてご説明しますのでご安心ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">どんな商材でも対応できますか？</div>
+        <div class="faq-a">美容・コスメ・スキンケア・ヘアケア・サプリメントなど、GVAのモニターコミュニティと親和性の高い商材が最適です。まずは無料相談でご確認ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">効果が出るまでどのくらいかかりますか？</div>
+        <div class="faq-a">投稿完了まで最短2〜4週間。@cosme・LIPSは口コミが積み重なるほど検索上位に表示されやすくなるため、複数回の施策が最も効果的です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">GVAのタレントとの組み合わせはできますか？</div>
+        <div class="faq-a">はい。GVA所属タレント（9名）のSNSでの認知拡大と、一般モニターによる@cosme・LIPS・Amazon口コミを組み合わせた「認知×口コミ」のフル施策も提案可能です。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="container">
+    <div class="section-label">FREE CONSULTATION</div>
+    <h2>まずは無料でご相談ください</h2>
+    <p>「費用感だけ確認したい」でもOK。30分のオンライン相談で最適な口コミ施策をご提案します。</p>
+    <div style="max-width:440px;margin:0 auto;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.13);border-radius:16px;padding:40px 28px;text-align:center;">
+      <div style="display:flex;gap:8px;justify-content:center;margin-bottom:32px;">
+        <div style="flex:1;padding:10px 8px;border:1px solid rgba(255,255,255,0.18);border-radius:8px;font-size:12px;font-weight:700;color:rgba(255,255,255,0.75);">相談無料</div>
+        <div style="flex:1;padding:10px 8px;border:1px solid rgba(255,255,255,0.18);border-radius:8px;font-size:12px;font-weight:700;color:rgba(255,255,255,0.75);">30分〜OK</div>
+        <div style="flex:1;padding:10px 8px;border:1px solid rgba(255,255,255,0.18);border-radius:8px;font-size:12px;font-weight:700;color:rgba(255,255,255,0.75);">翌営業日回答</div>
+      </div>
+      <p style="font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:8px;">Contact</p>
+      <p style="font-size:18px;font-weight:800;color:var(--white);margin-bottom:28px;word-break:break-all;">info@goodvibesagency.tokyo</p>
+      <a href="mailto:info@goodvibesagency.tokyo?subject=【口コミ施策】無料相談希望" class="form-submit" style="display:block;text-decoration:none;">
+        無料で相談する →
+      </a>
+      <p class="form-note" style="margin-top:14px;">※ 翌営業日以内にご返信します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">GOOD VIBES AGENCY</div>
+  <div class="footer-links">
+    <a href="https://goodvibesagency.tokyo/">Corporate</a>
+    <a href="https://goodvibesagency.tokyo/gva-ugc-lp/">UGC施策（SNS）</a>
+    <a href="https://good-vibes-agency.github.io/gva-ai-ugc-factory-lp/">AI UGC Factory</a>
+  </div>
+  <p class="footer-copy">© 2026 GOOD VIBES AGENCY</p>
+</footer>
+
+<script>
+// Scroll reveal
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('in'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -24px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.style.cursor = 'pointer';
+  const a = q.nextElementSibling;
+  a.style.maxHeight = '0'; a.style.overflow = 'hidden'; a.style.transition = 'max-height 0.35s ease, padding 0.35s ease';
+  a.style.paddingTop = '0'; a.style.paddingBottom = '0';
+  q.addEventListener('click', () => {
+    const open = a.style.maxHeight !== '0px' && a.style.maxHeight !== '';
+    document.querySelectorAll('.faq-q + div').forEach(x => { x.style.maxHeight = '0'; x.style.paddingTop = '0'; x.style.paddingBottom = '0'; });
+    document.querySelectorAll('.faq-q').forEach(x => x.classList.remove('open'));
+    if(!open) { a.style.maxHeight = a.scrollHeight + 32 + 'px'; a.style.paddingTop = '0'; a.style.paddingBottom = '18px'; q.classList.add('open'); }
+  });
+});
+// hero elements immediate reveal
+document.querySelectorAll('.hero .reveal').forEach((el,i) => setTimeout(() => el.classList.add('in'), i*100));
+</script>
+</body>
+</html>
